@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.fanghuwang.autocode.dao.mapper.ModelPojoMapper" >
+  <resultMap id="BaseResultMap" type="com.fanghuwang.autocode.dao.model.ModelPojoKey" >
+    <id column="model_id" property="modelId" jdbcType="CHAR" />
+    <id column="pojo_id" property="pojoId" jdbcType="CHAR" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="com.fanghuwang.autocode.dao.model.ModelPojoKey" >
+    delete from model_pojo
+    where model_id = #{modelId,jdbcType=CHAR}
+      and pojo_id = #{pojoId,jdbcType=CHAR}
+  </delete>
+  <insert id="insert" parameterType="com.fanghuwang.autocode.dao.model.ModelPojoKey" >
+    insert into model_pojo (model_id, pojo_id)
+    values (#{modelId,jdbcType=CHAR}, #{pojoId,jdbcType=CHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.fanghuwang.autocode.dao.model.ModelPojoKey" >
+    insert into model_pojo
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="modelId != null" >
+        model_id,
+      </if>
+      <if test="pojoId != null" >
+        pojo_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="modelId != null" >
+        #{modelId,jdbcType=CHAR},
+      </if>
+      <if test="pojoId != null" >
+        #{pojoId,jdbcType=CHAR},
+      </if>
+    </trim>
+  </insert>
+</mapper>

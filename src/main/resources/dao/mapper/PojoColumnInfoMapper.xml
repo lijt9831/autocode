@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.fanghuwang.autocode.dao.mapper.PojoColumnInfoMapper" >
+  <resultMap id="BaseResultMap" type="com.fanghuwang.autocode.dao.model.PojoColumnInfo" >
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="pojo_id" property="pojoId" jdbcType="CHAR" />
+    <result column="column_id" property="columnId" jdbcType="CHAR" />
+    <result column="column_name" property="columnName" jdbcType="VARCHAR" />
+    <result column="column_cn_name" property="columnCnName" jdbcType="VARCHAR" />
+    <result column="db_table" property="dbTable" jdbcType="VARCHAR" />
+    <result column="db_table_column" property="dbTableColumn" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    id, pojo_id, column_id, column_name, column_cn_name, db_table, db_table_column
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.fanghuwang.autocode.dao.model.PojoColumnInfoExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    'true' as QUERYID,
+    <include refid="Base_Column_List" />
+    from pojo_column_info
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from pojo_column_info
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from pojo_column_info
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.fanghuwang.autocode.dao.model.PojoColumnInfoExample" >
+    delete from pojo_column_info
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.fanghuwang.autocode.dao.model.PojoColumnInfo" useGeneratedKeys="true" keyProperty="id" >
+    insert into pojo_column_info (pojo_id, column_id, column_name, 
+      column_cn_name, db_table, db_table_column
+      )
+    values (#{pojoId,jdbcType=CHAR}, #{columnId,jdbcType=CHAR}, #{columnName,jdbcType=VARCHAR}, 
+      #{columnCnName,jdbcType=VARCHAR}, #{dbTable,jdbcType=VARCHAR}, #{dbTableColumn,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.fanghuwang.autocode.dao.model.PojoColumnInfo" useGeneratedKeys="true" keyProperty="id" >
+    insert into pojo_column_info
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="pojoId != null" >
+        pojo_id,
+      </if>
+      <if test="columnId != null" >
+        column_id,
+      </if>
+      <if test="columnName != null" >
+        column_name,
+      </if>
+      <if test="columnCnName != null" >
+        column_cn_name,
+      </if>
+      <if test="dbTable != null" >
+        db_table,
+      </if>
+      <if test="dbTableColumn != null" >
+        db_table_column,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="pojoId != null" >
+        #{pojoId,jdbcType=CHAR},
+      </if>
+      <if test="columnId != null" >
+        #{columnId,jdbcType=CHAR},
+      </if>
+      <if test="columnName != null" >
+        #{columnName,jdbcType=VARCHAR},
+      </if>
+      <if test="columnCnName != null" >
+        #{columnCnName,jdbcType=VARCHAR},
+      </if>
+      <if test="dbTable != null" >
+        #{dbTable,jdbcType=VARCHAR},
+      </if>
+      <if test="dbTableColumn != null" >
+        #{dbTableColumn,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.fanghuwang.autocode.dao.model.PojoColumnInfoExample" resultType="java.lang.Integer" >
+    select count(*) from pojo_column_info
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update pojo_column_info
+    <set >
+      <if test="record.id != null" >
+        id = #{record.id,jdbcType=BIGINT},
+      </if>
+      <if test="record.pojoId != null" >
+        pojo_id = #{record.pojoId,jdbcType=CHAR},
+      </if>
+      <if test="record.columnId != null" >
+        column_id = #{record.columnId,jdbcType=CHAR},
+      </if>
+      <if test="record.columnName != null" >
+        column_name = #{record.columnName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.columnCnName != null" >
+        column_cn_name = #{record.columnCnName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.dbTable != null" >
+        db_table = #{record.dbTable,jdbcType=VARCHAR},
+      </if>
+      <if test="record.dbTableColumn != null" >
+        db_table_column = #{record.dbTableColumn,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update pojo_column_info
+    set id = #{record.id,jdbcType=BIGINT},
+      pojo_id = #{record.pojoId,jdbcType=CHAR},
+      column_id = #{record.columnId,jdbcType=CHAR},
+      column_name = #{record.columnName,jdbcType=VARCHAR},
+      column_cn_name = #{record.columnCnName,jdbcType=VARCHAR},
+      db_table = #{record.dbTable,jdbcType=VARCHAR},
+      db_table_column = #{record.dbTableColumn,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.fanghuwang.autocode.dao.model.PojoColumnInfo" >
+    update pojo_column_info
+    <set >
+      <if test="pojoId != null" >
+        pojo_id = #{pojoId,jdbcType=CHAR},
+      </if>
+      <if test="columnId != null" >
+        column_id = #{columnId,jdbcType=CHAR},
+      </if>
+      <if test="columnName != null" >
+        column_name = #{columnName,jdbcType=VARCHAR},
+      </if>
+      <if test="columnCnName != null" >
+        column_cn_name = #{columnCnName,jdbcType=VARCHAR},
+      </if>
+      <if test="dbTable != null" >
+        db_table = #{dbTable,jdbcType=VARCHAR},
+      </if>
+      <if test="dbTableColumn != null" >
+        db_table_column = #{dbTableColumn,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.fanghuwang.autocode.dao.model.PojoColumnInfo" >
+    update pojo_column_info
+    set pojo_id = #{pojoId,jdbcType=CHAR},
+      column_id = #{columnId,jdbcType=CHAR},
+      column_name = #{columnName,jdbcType=VARCHAR},
+      column_cn_name = #{columnCnName,jdbcType=VARCHAR},
+      db_table = #{dbTable,jdbcType=VARCHAR},
+      db_table_column = #{dbTableColumn,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

@@ -1,0 +1,1468 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.fanghuwang.autocode.dao.mapper.HouseInfoMapper" >
+  <resultMap id="BaseResultMap" type="com.fanghuwang.autocode.dao.model.HouseInfo" >
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="house_code" property="houseCode" jdbcType="VARCHAR" />
+    <result column="house_cert_no" property="houseCertNo" jdbcType="VARCHAR" />
+    <result column="house_province_code" property="houseProvinceCode" jdbcType="VARCHAR" />
+    <result column="house_province" property="houseProvince" jdbcType="VARCHAR" />
+    <result column="house_city_code" property="houseCityCode" jdbcType="VARCHAR" />
+    <result column="house_city" property="houseCity" jdbcType="VARCHAR" />
+    <result column="house_county_code" property="houseCountyCode" jdbcType="VARCHAR" />
+    <result column="house_county" property="houseCounty" jdbcType="VARCHAR" />
+    <result column="house_address" property="houseAddress" jdbcType="VARCHAR" />
+    <result column="house_location" property="houseLocation" jdbcType="VARCHAR" />
+    <result column="family_member" property="familyMember" jdbcType="CHAR" />
+    <result column="house_use" property="houseUse" jdbcType="CHAR" />
+    <result column="guihuayongtu" property="guihuayongtu" jdbcType="TINYINT" />
+    <result column="property_access" property="propertyAccess" jdbcType="TINYINT" />
+    <result column="chanquan" property="chanquan" jdbcType="TINYINT" />
+    <result column="is_manwuweiyi" property="isManwuweiyi" jdbcType="TINYINT" />
+    <result column="is_xuequ" property="isXuequ" jdbcType="TINYINT" />
+    <result column="school_name" property="schoolName" jdbcType="VARCHAR" />
+    <result column="all_floors" property="allFloors" jdbcType="INTEGER" />
+    <result column="in_floors" property="inFloors" jdbcType="INTEGER" />
+    <result column="house_size" property="houseSize" jdbcType="REAL" />
+    <result column="built_in" property="builtIn" jdbcType="VARCHAR" />
+    <result column="house_register_date" property="houseRegisterDate" jdbcType="DATE" />
+    <result column="house_buy_date" property="houseBuyDate" jdbcType="DATE" />
+    <result column="house_structure" property="houseStructure" jdbcType="TINYINT" />
+    <result column="is_new" property="isNew" jdbcType="TINYINT" />
+    <result column="house_buy_money" property="houseBuyMoney" jdbcType="DECIMAL" />
+    <result column="house_type" property="houseType" jdbcType="TINYINT" />
+    <result column="house_property" property="houseProperty" jdbcType="TINYINT" />
+    <result column="huxing" property="huxing" jdbcType="TINYINT" />
+    <result column="fangwuchaoxiang" property="fangwuchaoxiang" jdbcType="TINYINT" />
+    <result column="juzhuzhuangkuang" property="juzhuzhuangkuang" jdbcType="TINYINT" />
+    <result column="house_pattern" property="housePattern" jdbcType="TINYINT" />
+    <result column="fitment_situation" property="fitmentSituation" jdbcType="TINYINT" />
+    <result column="indoor_sunlight" property="indoorSunlight" jdbcType="TINYINT" />
+    <result column="have_lift" property="haveLift" jdbcType="TINYINT" />
+    <result column="jiti_jihu" property="jitiJihu" jdbcType="VARCHAR" />
+    <result column="is_excellent_place" property="isExcellentPlace" jdbcType="TINYINT" />
+    <result column="is_frontage" property="isFrontage" jdbcType="TINYINT" />
+    <result column="is_nearsubway" property="isNearsubway" jdbcType="TINYINT" />
+    <result column="zhongda_biandong" property="zhongdaBiandong" jdbcType="TINYINT" />
+    <result column="is_xiongzhai" property="isXiongzhai" jdbcType="TINYINT" />
+    <result column="is_river_view_house" property="isRiverViewHouse" jdbcType="TINYINT" />
+    <result column="house_district" property="houseDistrict" jdbcType="VARCHAR" />
+    <result column="parking_situation" property="parkingSituation" jdbcType="TINYINT" />
+    <result column="estate_parking_situation" property="estateParkingSituation" jdbcType="TINYINT" />
+    <result column="estate_safe_facility" property="estateSafeFacility" jdbcType="TINYINT" />
+    <result column="afforest_sanitation" property="afforestSanitation" jdbcType="TINYINT" />
+    <result column="afforest_percent" property="afforestPercent" jdbcType="DECIMAL" />
+    <result column="plot_ratio" property="plotRatio" jdbcType="DECIMAL" />
+    <result column="developers" property="developers" jdbcType="VARCHAR" />
+    <result column="property_management" property="propertyManagement" jdbcType="VARCHAR" />
+    <result column="resident_total" property="residentTotal" jdbcType="INTEGER" />
+    <result column="estate_area" property="estateArea" jdbcType="INTEGER" />
+    <result column="aversion_facility" property="aversionFacility" jdbcType="TINYINT" />
+    <result column="environment" property="environment" jdbcType="VARCHAR" />
+    <result column="peripheral_matching" property="peripheralMatching" jdbcType="VARCHAR" />
+    <result column="house_owners" property="houseOwners" jdbcType="VARCHAR" />
+    <result column="mortgage_user_name" property="mortgageUserName" jdbcType="VARCHAR" />
+    <result column="current_mortgage_status" property="currentMortgageStatus" jdbcType="TINYINT" />
+    <result column="mortgage_order_id" property="mortgageOrderId" jdbcType="VARCHAR" />
+    <result column="create_user" property="createUser" jdbcType="CHAR" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="update_user" property="updateUser" jdbcType="CHAR" />
+    <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <resultMap id="ResultMapWithBLOBs" type="com.fanghuwang.autocode.dao.model.HouseInfoWithBLOBs" extends="BaseResultMap" >
+    <result column="family_member_remarks" property="familyMemberRemarks" jdbcType="LONGVARCHAR" />
+    <result column="house_use_remarks" property="houseUseRemarks" jdbcType="LONGVARCHAR" />
+    <result column="living_conditions" property="livingConditions" jdbcType="LONGVARCHAR" />
+    <result column="indoor_situation" property="indoorSituation" jdbcType="LONGVARCHAR" />
+    <result column="house_overall_situation" property="houseOverallSituation" jdbcType="LONGVARCHAR" />
+    <result column="biandong_detail" property="biandongDetail" jdbcType="LONGVARCHAR" />
+    <result column="xiongzhai_desc" property="xiongzhaiDesc" jdbcType="LONGVARCHAR" />
+    <result column="river_view_house_detail" property="riverViewHouseDetail" jdbcType="LONGVARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    id, house_code, house_cert_no, house_province_code, house_province, house_city_code, 
+    house_city, house_county_code, house_county, house_address, house_location, family_member, 
+    house_use, guihuayongtu, property_access, chanquan, is_manwuweiyi, is_xuequ, school_name, 
+    all_floors, in_floors, house_size, built_in, house_register_date, house_buy_date, 
+    house_structure, is_new, house_buy_money, house_type, house_property, huxing, fangwuchaoxiang, 
+    juzhuzhuangkuang, house_pattern, fitment_situation, indoor_sunlight, have_lift, jiti_jihu, 
+    is_excellent_place, is_frontage, is_nearsubway, zhongda_biandong, is_xiongzhai, is_river_view_house, 
+    house_district, parking_situation, estate_parking_situation, estate_safe_facility, 
+    afforest_sanitation, afforest_percent, plot_ratio, developers, property_management, 
+    resident_total, estate_area, aversion_facility, environment, peripheral_matching, 
+    house_owners, mortgage_user_name, current_mortgage_status, mortgage_order_id, create_user, 
+    create_time, update_user, update_time
+  </sql>
+  <sql id="Blob_Column_List" >
+    family_member_remarks, house_use_remarks, living_conditions, indoor_situation, house_overall_situation, 
+    biandong_detail, xiongzhai_desc, river_view_house_detail
+  </sql>
+  <select id="selectByExampleWithBLOBs" resultMap="ResultMapWithBLOBs" parameterType="com.fanghuwang.autocode.dao.model.HouseInfoExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    'true' as QUERYID,
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from fh_house_info
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.fanghuwang.autocode.dao.model.HouseInfoExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    'true' as QUERYID,
+    <include refid="Base_Column_List" />
+    from fh_house_info
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from fh_house_info
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from fh_house_info
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.fanghuwang.autocode.dao.model.HouseInfoExample" >
+    delete from fh_house_info
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.fanghuwang.autocode.dao.model.HouseInfoWithBLOBs" useGeneratedKeys="true" keyProperty="id" >
+    insert into fh_house_info (house_code, house_cert_no, house_province_code, 
+      house_province, house_city_code, house_city, 
+      house_county_code, house_county, house_address, 
+      house_location, family_member, house_use, 
+      guihuayongtu, property_access, chanquan, 
+      is_manwuweiyi, is_xuequ, school_name, 
+      all_floors, in_floors, house_size, 
+      built_in, house_register_date, house_buy_date, 
+      house_structure, is_new, house_buy_money, 
+      house_type, house_property, huxing, 
+      fangwuchaoxiang, juzhuzhuangkuang, house_pattern, 
+      fitment_situation, indoor_sunlight, have_lift, 
+      jiti_jihu, is_excellent_place, is_frontage, 
+      is_nearsubway, zhongda_biandong, is_xiongzhai, 
+      is_river_view_house, house_district, parking_situation, 
+      estate_parking_situation, estate_safe_facility, 
+      afforest_sanitation, afforest_percent, plot_ratio, 
+      developers, property_management, resident_total, 
+      estate_area, aversion_facility, environment, 
+      peripheral_matching, house_owners, mortgage_user_name, 
+      current_mortgage_status, mortgage_order_id, 
+      create_user, create_time, update_user, 
+      update_time, family_member_remarks, 
+      house_use_remarks, living_conditions, 
+      indoor_situation, house_overall_situation, 
+      biandong_detail, xiongzhai_desc, 
+      river_view_house_detail)
+    values (#{houseCode,jdbcType=VARCHAR}, #{houseCertNo,jdbcType=VARCHAR}, #{houseProvinceCode,jdbcType=VARCHAR}, 
+      #{houseProvince,jdbcType=VARCHAR}, #{houseCityCode,jdbcType=VARCHAR}, #{houseCity,jdbcType=VARCHAR}, 
+      #{houseCountyCode,jdbcType=VARCHAR}, #{houseCounty,jdbcType=VARCHAR}, #{houseAddress,jdbcType=VARCHAR}, 
+      #{houseLocation,jdbcType=VARCHAR}, #{familyMember,jdbcType=CHAR}, #{houseUse,jdbcType=CHAR}, 
+      #{guihuayongtu,jdbcType=TINYINT}, #{propertyAccess,jdbcType=TINYINT}, #{chanquan,jdbcType=TINYINT}, 
+      #{isManwuweiyi,jdbcType=TINYINT}, #{isXuequ,jdbcType=TINYINT}, #{schoolName,jdbcType=VARCHAR}, 
+      #{allFloors,jdbcType=INTEGER}, #{inFloors,jdbcType=INTEGER}, #{houseSize,jdbcType=REAL}, 
+      #{builtIn,jdbcType=VARCHAR}, #{houseRegisterDate,jdbcType=DATE}, #{houseBuyDate,jdbcType=DATE}, 
+      #{houseStructure,jdbcType=TINYINT}, #{isNew,jdbcType=TINYINT}, #{houseBuyMoney,jdbcType=DECIMAL}, 
+      #{houseType,jdbcType=TINYINT}, #{houseProperty,jdbcType=TINYINT}, #{huxing,jdbcType=TINYINT}, 
+      #{fangwuchaoxiang,jdbcType=TINYINT}, #{juzhuzhuangkuang,jdbcType=TINYINT}, #{housePattern,jdbcType=TINYINT}, 
+      #{fitmentSituation,jdbcType=TINYINT}, #{indoorSunlight,jdbcType=TINYINT}, #{haveLift,jdbcType=TINYINT}, 
+      #{jitiJihu,jdbcType=VARCHAR}, #{isExcellentPlace,jdbcType=TINYINT}, #{isFrontage,jdbcType=TINYINT}, 
+      #{isNearsubway,jdbcType=TINYINT}, #{zhongdaBiandong,jdbcType=TINYINT}, #{isXiongzhai,jdbcType=TINYINT}, 
+      #{isRiverViewHouse,jdbcType=TINYINT}, #{houseDistrict,jdbcType=VARCHAR}, #{parkingSituation,jdbcType=TINYINT}, 
+      #{estateParkingSituation,jdbcType=TINYINT}, #{estateSafeFacility,jdbcType=TINYINT}, 
+      #{afforestSanitation,jdbcType=TINYINT}, #{afforestPercent,jdbcType=DECIMAL}, #{plotRatio,jdbcType=DECIMAL}, 
+      #{developers,jdbcType=VARCHAR}, #{propertyManagement,jdbcType=VARCHAR}, #{residentTotal,jdbcType=INTEGER}, 
+      #{estateArea,jdbcType=INTEGER}, #{aversionFacility,jdbcType=TINYINT}, #{environment,jdbcType=VARCHAR}, 
+      #{peripheralMatching,jdbcType=VARCHAR}, #{houseOwners,jdbcType=VARCHAR}, #{mortgageUserName,jdbcType=VARCHAR}, 
+      #{currentMortgageStatus,jdbcType=TINYINT}, #{mortgageOrderId,jdbcType=VARCHAR}, 
+      #{createUser,jdbcType=CHAR}, #{createTime,jdbcType=TIMESTAMP}, #{updateUser,jdbcType=CHAR}, 
+      #{updateTime,jdbcType=TIMESTAMP}, #{familyMemberRemarks,jdbcType=LONGVARCHAR}, 
+      #{houseUseRemarks,jdbcType=LONGVARCHAR}, #{livingConditions,jdbcType=LONGVARCHAR}, 
+      #{indoorSituation,jdbcType=LONGVARCHAR}, #{houseOverallSituation,jdbcType=LONGVARCHAR}, 
+      #{biandongDetail,jdbcType=LONGVARCHAR}, #{xiongzhaiDesc,jdbcType=LONGVARCHAR}, 
+      #{riverViewHouseDetail,jdbcType=LONGVARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.fanghuwang.autocode.dao.model.HouseInfoWithBLOBs" useGeneratedKeys="true" keyProperty="id" >
+    insert into fh_house_info
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="houseCode != null" >
+        house_code,
+      </if>
+      <if test="houseCertNo != null" >
+        house_cert_no,
+      </if>
+      <if test="houseProvinceCode != null" >
+        house_province_code,
+      </if>
+      <if test="houseProvince != null" >
+        house_province,
+      </if>
+      <if test="houseCityCode != null" >
+        house_city_code,
+      </if>
+      <if test="houseCity != null" >
+        house_city,
+      </if>
+      <if test="houseCountyCode != null" >
+        house_county_code,
+      </if>
+      <if test="houseCounty != null" >
+        house_county,
+      </if>
+      <if test="houseAddress != null" >
+        house_address,
+      </if>
+      <if test="houseLocation != null" >
+        house_location,
+      </if>
+      <if test="familyMember != null" >
+        family_member,
+      </if>
+      <if test="houseUse != null" >
+        house_use,
+      </if>
+      <if test="guihuayongtu != null" >
+        guihuayongtu,
+      </if>
+      <if test="propertyAccess != null" >
+        property_access,
+      </if>
+      <if test="chanquan != null" >
+        chanquan,
+      </if>
+      <if test="isManwuweiyi != null" >
+        is_manwuweiyi,
+      </if>
+      <if test="isXuequ != null" >
+        is_xuequ,
+      </if>
+      <if test="schoolName != null" >
+        school_name,
+      </if>
+      <if test="allFloors != null" >
+        all_floors,
+      </if>
+      <if test="inFloors != null" >
+        in_floors,
+      </if>
+      <if test="houseSize != null" >
+        house_size,
+      </if>
+      <if test="builtIn != null" >
+        built_in,
+      </if>
+      <if test="houseRegisterDate != null" >
+        house_register_date,
+      </if>
+      <if test="houseBuyDate != null" >
+        house_buy_date,
+      </if>
+      <if test="houseStructure != null" >
+        house_structure,
+      </if>
+      <if test="isNew != null" >
+        is_new,
+      </if>
+      <if test="houseBuyMoney != null" >
+        house_buy_money,
+      </if>
+      <if test="houseType != null" >
+        house_type,
+      </if>
+      <if test="houseProperty != null" >
+        house_property,
+      </if>
+      <if test="huxing != null" >
+        huxing,
+      </if>
+      <if test="fangwuchaoxiang != null" >
+        fangwuchaoxiang,
+      </if>
+      <if test="juzhuzhuangkuang != null" >
+        juzhuzhuangkuang,
+      </if>
+      <if test="housePattern != null" >
+        house_pattern,
+      </if>
+      <if test="fitmentSituation != null" >
+        fitment_situation,
+      </if>
+      <if test="indoorSunlight != null" >
+        indoor_sunlight,
+      </if>
+      <if test="haveLift != null" >
+        have_lift,
+      </if>
+      <if test="jitiJihu != null" >
+        jiti_jihu,
+      </if>
+      <if test="isExcellentPlace != null" >
+        is_excellent_place,
+      </if>
+      <if test="isFrontage != null" >
+        is_frontage,
+      </if>
+      <if test="isNearsubway != null" >
+        is_nearsubway,
+      </if>
+      <if test="zhongdaBiandong != null" >
+        zhongda_biandong,
+      </if>
+      <if test="isXiongzhai != null" >
+        is_xiongzhai,
+      </if>
+      <if test="isRiverViewHouse != null" >
+        is_river_view_house,
+      </if>
+      <if test="houseDistrict != null" >
+        house_district,
+      </if>
+      <if test="parkingSituation != null" >
+        parking_situation,
+      </if>
+      <if test="estateParkingSituation != null" >
+        estate_parking_situation,
+      </if>
+      <if test="estateSafeFacility != null" >
+        estate_safe_facility,
+      </if>
+      <if test="afforestSanitation != null" >
+        afforest_sanitation,
+      </if>
+      <if test="afforestPercent != null" >
+        afforest_percent,
+      </if>
+      <if test="plotRatio != null" >
+        plot_ratio,
+      </if>
+      <if test="developers != null" >
+        developers,
+      </if>
+      <if test="propertyManagement != null" >
+        property_management,
+      </if>
+      <if test="residentTotal != null" >
+        resident_total,
+      </if>
+      <if test="estateArea != null" >
+        estate_area,
+      </if>
+      <if test="aversionFacility != null" >
+        aversion_facility,
+      </if>
+      <if test="environment != null" >
+        environment,
+      </if>
+      <if test="peripheralMatching != null" >
+        peripheral_matching,
+      </if>
+      <if test="houseOwners != null" >
+        house_owners,
+      </if>
+      <if test="mortgageUserName != null" >
+        mortgage_user_name,
+      </if>
+      <if test="currentMortgageStatus != null" >
+        current_mortgage_status,
+      </if>
+      <if test="mortgageOrderId != null" >
+        mortgage_order_id,
+      </if>
+      <if test="createUser != null" >
+        create_user,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+      <if test="updateUser != null" >
+        update_user,
+      </if>
+      <if test="updateTime != null" >
+        update_time,
+      </if>
+      <if test="familyMemberRemarks != null" >
+        family_member_remarks,
+      </if>
+      <if test="houseUseRemarks != null" >
+        house_use_remarks,
+      </if>
+      <if test="livingConditions != null" >
+        living_conditions,
+      </if>
+      <if test="indoorSituation != null" >
+        indoor_situation,
+      </if>
+      <if test="houseOverallSituation != null" >
+        house_overall_situation,
+      </if>
+      <if test="biandongDetail != null" >
+        biandong_detail,
+      </if>
+      <if test="xiongzhaiDesc != null" >
+        xiongzhai_desc,
+      </if>
+      <if test="riverViewHouseDetail != null" >
+        river_view_house_detail,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="houseCode != null" >
+        #{houseCode,jdbcType=VARCHAR},
+      </if>
+      <if test="houseCertNo != null" >
+        #{houseCertNo,jdbcType=VARCHAR},
+      </if>
+      <if test="houseProvinceCode != null" >
+        #{houseProvinceCode,jdbcType=VARCHAR},
+      </if>
+      <if test="houseProvince != null" >
+        #{houseProvince,jdbcType=VARCHAR},
+      </if>
+      <if test="houseCityCode != null" >
+        #{houseCityCode,jdbcType=VARCHAR},
+      </if>
+      <if test="houseCity != null" >
+        #{houseCity,jdbcType=VARCHAR},
+      </if>
+      <if test="houseCountyCode != null" >
+        #{houseCountyCode,jdbcType=VARCHAR},
+      </if>
+      <if test="houseCounty != null" >
+        #{houseCounty,jdbcType=VARCHAR},
+      </if>
+      <if test="houseAddress != null" >
+        #{houseAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="houseLocation != null" >
+        #{houseLocation,jdbcType=VARCHAR},
+      </if>
+      <if test="familyMember != null" >
+        #{familyMember,jdbcType=CHAR},
+      </if>
+      <if test="houseUse != null" >
+        #{houseUse,jdbcType=CHAR},
+      </if>
+      <if test="guihuayongtu != null" >
+        #{guihuayongtu,jdbcType=TINYINT},
+      </if>
+      <if test="propertyAccess != null" >
+        #{propertyAccess,jdbcType=TINYINT},
+      </if>
+      <if test="chanquan != null" >
+        #{chanquan,jdbcType=TINYINT},
+      </if>
+      <if test="isManwuweiyi != null" >
+        #{isManwuweiyi,jdbcType=TINYINT},
+      </if>
+      <if test="isXuequ != null" >
+        #{isXuequ,jdbcType=TINYINT},
+      </if>
+      <if test="schoolName != null" >
+        #{schoolName,jdbcType=VARCHAR},
+      </if>
+      <if test="allFloors != null" >
+        #{allFloors,jdbcType=INTEGER},
+      </if>
+      <if test="inFloors != null" >
+        #{inFloors,jdbcType=INTEGER},
+      </if>
+      <if test="houseSize != null" >
+        #{houseSize,jdbcType=REAL},
+      </if>
+      <if test="builtIn != null" >
+        #{builtIn,jdbcType=VARCHAR},
+      </if>
+      <if test="houseRegisterDate != null" >
+        #{houseRegisterDate,jdbcType=DATE},
+      </if>
+      <if test="houseBuyDate != null" >
+        #{houseBuyDate,jdbcType=DATE},
+      </if>
+      <if test="houseStructure != null" >
+        #{houseStructure,jdbcType=TINYINT},
+      </if>
+      <if test="isNew != null" >
+        #{isNew,jdbcType=TINYINT},
+      </if>
+      <if test="houseBuyMoney != null" >
+        #{houseBuyMoney,jdbcType=DECIMAL},
+      </if>
+      <if test="houseType != null" >
+        #{houseType,jdbcType=TINYINT},
+      </if>
+      <if test="houseProperty != null" >
+        #{houseProperty,jdbcType=TINYINT},
+      </if>
+      <if test="huxing != null" >
+        #{huxing,jdbcType=TINYINT},
+      </if>
+      <if test="fangwuchaoxiang != null" >
+        #{fangwuchaoxiang,jdbcType=TINYINT},
+      </if>
+      <if test="juzhuzhuangkuang != null" >
+        #{juzhuzhuangkuang,jdbcType=TINYINT},
+      </if>
+      <if test="housePattern != null" >
+        #{housePattern,jdbcType=TINYINT},
+      </if>
+      <if test="fitmentSituation != null" >
+        #{fitmentSituation,jdbcType=TINYINT},
+      </if>
+      <if test="indoorSunlight != null" >
+        #{indoorSunlight,jdbcType=TINYINT},
+      </if>
+      <if test="haveLift != null" >
+        #{haveLift,jdbcType=TINYINT},
+      </if>
+      <if test="jitiJihu != null" >
+        #{jitiJihu,jdbcType=VARCHAR},
+      </if>
+      <if test="isExcellentPlace != null" >
+        #{isExcellentPlace,jdbcType=TINYINT},
+      </if>
+      <if test="isFrontage != null" >
+        #{isFrontage,jdbcType=TINYINT},
+      </if>
+      <if test="isNearsubway != null" >
+        #{isNearsubway,jdbcType=TINYINT},
+      </if>
+      <if test="zhongdaBiandong != null" >
+        #{zhongdaBiandong,jdbcType=TINYINT},
+      </if>
+      <if test="isXiongzhai != null" >
+        #{isXiongzhai,jdbcType=TINYINT},
+      </if>
+      <if test="isRiverViewHouse != null" >
+        #{isRiverViewHouse,jdbcType=TINYINT},
+      </if>
+      <if test="houseDistrict != null" >
+        #{houseDistrict,jdbcType=VARCHAR},
+      </if>
+      <if test="parkingSituation != null" >
+        #{parkingSituation,jdbcType=TINYINT},
+      </if>
+      <if test="estateParkingSituation != null" >
+        #{estateParkingSituation,jdbcType=TINYINT},
+      </if>
+      <if test="estateSafeFacility != null" >
+        #{estateSafeFacility,jdbcType=TINYINT},
+      </if>
+      <if test="afforestSanitation != null" >
+        #{afforestSanitation,jdbcType=TINYINT},
+      </if>
+      <if test="afforestPercent != null" >
+        #{afforestPercent,jdbcType=DECIMAL},
+      </if>
+      <if test="plotRatio != null" >
+        #{plotRatio,jdbcType=DECIMAL},
+      </if>
+      <if test="developers != null" >
+        #{developers,jdbcType=VARCHAR},
+      </if>
+      <if test="propertyManagement != null" >
+        #{propertyManagement,jdbcType=VARCHAR},
+      </if>
+      <if test="residentTotal != null" >
+        #{residentTotal,jdbcType=INTEGER},
+      </if>
+      <if test="estateArea != null" >
+        #{estateArea,jdbcType=INTEGER},
+      </if>
+      <if test="aversionFacility != null" >
+        #{aversionFacility,jdbcType=TINYINT},
+      </if>
+      <if test="environment != null" >
+        #{environment,jdbcType=VARCHAR},
+      </if>
+      <if test="peripheralMatching != null" >
+        #{peripheralMatching,jdbcType=VARCHAR},
+      </if>
+      <if test="houseOwners != null" >
+        #{houseOwners,jdbcType=VARCHAR},
+      </if>
+      <if test="mortgageUserName != null" >
+        #{mortgageUserName,jdbcType=VARCHAR},
+      </if>
+      <if test="currentMortgageStatus != null" >
+        #{currentMortgageStatus,jdbcType=TINYINT},
+      </if>
+      <if test="mortgageOrderId != null" >
+        #{mortgageOrderId,jdbcType=VARCHAR},
+      </if>
+      <if test="createUser != null" >
+        #{createUser,jdbcType=CHAR},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateUser != null" >
+        #{updateUser,jdbcType=CHAR},
+      </if>
+      <if test="updateTime != null" >
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="familyMemberRemarks != null" >
+        #{familyMemberRemarks,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="houseUseRemarks != null" >
+        #{houseUseRemarks,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="livingConditions != null" >
+        #{livingConditions,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="indoorSituation != null" >
+        #{indoorSituation,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="houseOverallSituation != null" >
+        #{houseOverallSituation,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="biandongDetail != null" >
+        #{biandongDetail,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="xiongzhaiDesc != null" >
+        #{xiongzhaiDesc,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="riverViewHouseDetail != null" >
+        #{riverViewHouseDetail,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.fanghuwang.autocode.dao.model.HouseInfoExample" resultType="java.lang.Integer" >
+    select count(*) from fh_house_info
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update fh_house_info
+    <set >
+      <if test="record.id != null" >
+        id = #{record.id,jdbcType=BIGINT},
+      </if>
+      <if test="record.houseCode != null" >
+        house_code = #{record.houseCode,jdbcType=VARCHAR},
+      </if>
+      <if test="record.houseCertNo != null" >
+        house_cert_no = #{record.houseCertNo,jdbcType=VARCHAR},
+      </if>
+      <if test="record.houseProvinceCode != null" >
+        house_province_code = #{record.houseProvinceCode,jdbcType=VARCHAR},
+      </if>
+      <if test="record.houseProvince != null" >
+        house_province = #{record.houseProvince,jdbcType=VARCHAR},
+      </if>
+      <if test="record.houseCityCode != null" >
+        house_city_code = #{record.houseCityCode,jdbcType=VARCHAR},
+      </if>
+      <if test="record.houseCity != null" >
+        house_city = #{record.houseCity,jdbcType=VARCHAR},
+      </if>
+      <if test="record.houseCountyCode != null" >
+        house_county_code = #{record.houseCountyCode,jdbcType=VARCHAR},
+      </if>
+      <if test="record.houseCounty != null" >
+        house_county = #{record.houseCounty,jdbcType=VARCHAR},
+      </if>
+      <if test="record.houseAddress != null" >
+        house_address = #{record.houseAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="record.houseLocation != null" >
+        house_location = #{record.houseLocation,jdbcType=VARCHAR},
+      </if>
+      <if test="record.familyMember != null" >
+        family_member = #{record.familyMember,jdbcType=CHAR},
+      </if>
+      <if test="record.houseUse != null" >
+        house_use = #{record.houseUse,jdbcType=CHAR},
+      </if>
+      <if test="record.guihuayongtu != null" >
+        guihuayongtu = #{record.guihuayongtu,jdbcType=TINYINT},
+      </if>
+      <if test="record.propertyAccess != null" >
+        property_access = #{record.propertyAccess,jdbcType=TINYINT},
+      </if>
+      <if test="record.chanquan != null" >
+        chanquan = #{record.chanquan,jdbcType=TINYINT},
+      </if>
+      <if test="record.isManwuweiyi != null" >
+        is_manwuweiyi = #{record.isManwuweiyi,jdbcType=TINYINT},
+      </if>
+      <if test="record.isXuequ != null" >
+        is_xuequ = #{record.isXuequ,jdbcType=TINYINT},
+      </if>
+      <if test="record.schoolName != null" >
+        school_name = #{record.schoolName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.allFloors != null" >
+        all_floors = #{record.allFloors,jdbcType=INTEGER},
+      </if>
+      <if test="record.inFloors != null" >
+        in_floors = #{record.inFloors,jdbcType=INTEGER},
+      </if>
+      <if test="record.houseSize != null" >
+        house_size = #{record.houseSize,jdbcType=REAL},
+      </if>
+      <if test="record.builtIn != null" >
+        built_in = #{record.builtIn,jdbcType=VARCHAR},
+      </if>
+      <if test="record.houseRegisterDate != null" >
+        house_register_date = #{record.houseRegisterDate,jdbcType=DATE},
+      </if>
+      <if test="record.houseBuyDate != null" >
+        house_buy_date = #{record.houseBuyDate,jdbcType=DATE},
+      </if>
+      <if test="record.houseStructure != null" >
+        house_structure = #{record.houseStructure,jdbcType=TINYINT},
+      </if>
+      <if test="record.isNew != null" >
+        is_new = #{record.isNew,jdbcType=TINYINT},
+      </if>
+      <if test="record.houseBuyMoney != null" >
+        house_buy_money = #{record.houseBuyMoney,jdbcType=DECIMAL},
+      </if>
+      <if test="record.houseType != null" >
+        house_type = #{record.houseType,jdbcType=TINYINT},
+      </if>
+      <if test="record.houseProperty != null" >
+        house_property = #{record.houseProperty,jdbcType=TINYINT},
+      </if>
+      <if test="record.huxing != null" >
+        huxing = #{record.huxing,jdbcType=TINYINT},
+      </if>
+      <if test="record.fangwuchaoxiang != null" >
+        fangwuchaoxiang = #{record.fangwuchaoxiang,jdbcType=TINYINT},
+      </if>
+      <if test="record.juzhuzhuangkuang != null" >
+        juzhuzhuangkuang = #{record.juzhuzhuangkuang,jdbcType=TINYINT},
+      </if>
+      <if test="record.housePattern != null" >
+        house_pattern = #{record.housePattern,jdbcType=TINYINT},
+      </if>
+      <if test="record.fitmentSituation != null" >
+        fitment_situation = #{record.fitmentSituation,jdbcType=TINYINT},
+      </if>
+      <if test="record.indoorSunlight != null" >
+        indoor_sunlight = #{record.indoorSunlight,jdbcType=TINYINT},
+      </if>
+      <if test="record.haveLift != null" >
+        have_lift = #{record.haveLift,jdbcType=TINYINT},
+      </if>
+      <if test="record.jitiJihu != null" >
+        jiti_jihu = #{record.jitiJihu,jdbcType=VARCHAR},
+      </if>
+      <if test="record.isExcellentPlace != null" >
+        is_excellent_place = #{record.isExcellentPlace,jdbcType=TINYINT},
+      </if>
+      <if test="record.isFrontage != null" >
+        is_frontage = #{record.isFrontage,jdbcType=TINYINT},
+      </if>
+      <if test="record.isNearsubway != null" >
+        is_nearsubway = #{record.isNearsubway,jdbcType=TINYINT},
+      </if>
+      <if test="record.zhongdaBiandong != null" >
+        zhongda_biandong = #{record.zhongdaBiandong,jdbcType=TINYINT},
+      </if>
+      <if test="record.isXiongzhai != null" >
+        is_xiongzhai = #{record.isXiongzhai,jdbcType=TINYINT},
+      </if>
+      <if test="record.isRiverViewHouse != null" >
+        is_river_view_house = #{record.isRiverViewHouse,jdbcType=TINYINT},
+      </if>
+      <if test="record.houseDistrict != null" >
+        house_district = #{record.houseDistrict,jdbcType=VARCHAR},
+      </if>
+      <if test="record.parkingSituation != null" >
+        parking_situation = #{record.parkingSituation,jdbcType=TINYINT},
+      </if>
+      <if test="record.estateParkingSituation != null" >
+        estate_parking_situation = #{record.estateParkingSituation,jdbcType=TINYINT},
+      </if>
+      <if test="record.estateSafeFacility != null" >
+        estate_safe_facility = #{record.estateSafeFacility,jdbcType=TINYINT},
+      </if>
+      <if test="record.afforestSanitation != null" >
+        afforest_sanitation = #{record.afforestSanitation,jdbcType=TINYINT},
+      </if>
+      <if test="record.afforestPercent != null" >
+        afforest_percent = #{record.afforestPercent,jdbcType=DECIMAL},
+      </if>
+      <if test="record.plotRatio != null" >
+        plot_ratio = #{record.plotRatio,jdbcType=DECIMAL},
+      </if>
+      <if test="record.developers != null" >
+        developers = #{record.developers,jdbcType=VARCHAR},
+      </if>
+      <if test="record.propertyManagement != null" >
+        property_management = #{record.propertyManagement,jdbcType=VARCHAR},
+      </if>
+      <if test="record.residentTotal != null" >
+        resident_total = #{record.residentTotal,jdbcType=INTEGER},
+      </if>
+      <if test="record.estateArea != null" >
+        estate_area = #{record.estateArea,jdbcType=INTEGER},
+      </if>
+      <if test="record.aversionFacility != null" >
+        aversion_facility = #{record.aversionFacility,jdbcType=TINYINT},
+      </if>
+      <if test="record.environment != null" >
+        environment = #{record.environment,jdbcType=VARCHAR},
+      </if>
+      <if test="record.peripheralMatching != null" >
+        peripheral_matching = #{record.peripheralMatching,jdbcType=VARCHAR},
+      </if>
+      <if test="record.houseOwners != null" >
+        house_owners = #{record.houseOwners,jdbcType=VARCHAR},
+      </if>
+      <if test="record.mortgageUserName != null" >
+        mortgage_user_name = #{record.mortgageUserName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.currentMortgageStatus != null" >
+        current_mortgage_status = #{record.currentMortgageStatus,jdbcType=TINYINT},
+      </if>
+      <if test="record.mortgageOrderId != null" >
+        mortgage_order_id = #{record.mortgageOrderId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.createUser != null" >
+        create_user = #{record.createUser,jdbcType=CHAR},
+      </if>
+      <if test="record.createTime != null" >
+        create_time = #{record.createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.updateUser != null" >
+        update_user = #{record.updateUser,jdbcType=CHAR},
+      </if>
+      <if test="record.updateTime != null" >
+        update_time = #{record.updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.familyMemberRemarks != null" >
+        family_member_remarks = #{record.familyMemberRemarks,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="record.houseUseRemarks != null" >
+        house_use_remarks = #{record.houseUseRemarks,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="record.livingConditions != null" >
+        living_conditions = #{record.livingConditions,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="record.indoorSituation != null" >
+        indoor_situation = #{record.indoorSituation,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="record.houseOverallSituation != null" >
+        house_overall_situation = #{record.houseOverallSituation,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="record.biandongDetail != null" >
+        biandong_detail = #{record.biandongDetail,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="record.xiongzhaiDesc != null" >
+        xiongzhai_desc = #{record.xiongzhaiDesc,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="record.riverViewHouseDetail != null" >
+        river_view_house_detail = #{record.riverViewHouseDetail,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExampleWithBLOBs" parameterType="map" >
+    update fh_house_info
+    set id = #{record.id,jdbcType=BIGINT},
+      house_code = #{record.houseCode,jdbcType=VARCHAR},
+      house_cert_no = #{record.houseCertNo,jdbcType=VARCHAR},
+      house_province_code = #{record.houseProvinceCode,jdbcType=VARCHAR},
+      house_province = #{record.houseProvince,jdbcType=VARCHAR},
+      house_city_code = #{record.houseCityCode,jdbcType=VARCHAR},
+      house_city = #{record.houseCity,jdbcType=VARCHAR},
+      house_county_code = #{record.houseCountyCode,jdbcType=VARCHAR},
+      house_county = #{record.houseCounty,jdbcType=VARCHAR},
+      house_address = #{record.houseAddress,jdbcType=VARCHAR},
+      house_location = #{record.houseLocation,jdbcType=VARCHAR},
+      family_member = #{record.familyMember,jdbcType=CHAR},
+      house_use = #{record.houseUse,jdbcType=CHAR},
+      guihuayongtu = #{record.guihuayongtu,jdbcType=TINYINT},
+      property_access = #{record.propertyAccess,jdbcType=TINYINT},
+      chanquan = #{record.chanquan,jdbcType=TINYINT},
+      is_manwuweiyi = #{record.isManwuweiyi,jdbcType=TINYINT},
+      is_xuequ = #{record.isXuequ,jdbcType=TINYINT},
+      school_name = #{record.schoolName,jdbcType=VARCHAR},
+      all_floors = #{record.allFloors,jdbcType=INTEGER},
+      in_floors = #{record.inFloors,jdbcType=INTEGER},
+      house_size = #{record.houseSize,jdbcType=REAL},
+      built_in = #{record.builtIn,jdbcType=VARCHAR},
+      house_register_date = #{record.houseRegisterDate,jdbcType=DATE},
+      house_buy_date = #{record.houseBuyDate,jdbcType=DATE},
+      house_structure = #{record.houseStructure,jdbcType=TINYINT},
+      is_new = #{record.isNew,jdbcType=TINYINT},
+      house_buy_money = #{record.houseBuyMoney,jdbcType=DECIMAL},
+      house_type = #{record.houseType,jdbcType=TINYINT},
+      house_property = #{record.houseProperty,jdbcType=TINYINT},
+      huxing = #{record.huxing,jdbcType=TINYINT},
+      fangwuchaoxiang = #{record.fangwuchaoxiang,jdbcType=TINYINT},
+      juzhuzhuangkuang = #{record.juzhuzhuangkuang,jdbcType=TINYINT},
+      house_pattern = #{record.housePattern,jdbcType=TINYINT},
+      fitment_situation = #{record.fitmentSituation,jdbcType=TINYINT},
+      indoor_sunlight = #{record.indoorSunlight,jdbcType=TINYINT},
+      have_lift = #{record.haveLift,jdbcType=TINYINT},
+      jiti_jihu = #{record.jitiJihu,jdbcType=VARCHAR},
+      is_excellent_place = #{record.isExcellentPlace,jdbcType=TINYINT},
+      is_frontage = #{record.isFrontage,jdbcType=TINYINT},
+      is_nearsubway = #{record.isNearsubway,jdbcType=TINYINT},
+      zhongda_biandong = #{record.zhongdaBiandong,jdbcType=TINYINT},
+      is_xiongzhai = #{record.isXiongzhai,jdbcType=TINYINT},
+      is_river_view_house = #{record.isRiverViewHouse,jdbcType=TINYINT},
+      house_district = #{record.houseDistrict,jdbcType=VARCHAR},
+      parking_situation = #{record.parkingSituation,jdbcType=TINYINT},
+      estate_parking_situation = #{record.estateParkingSituation,jdbcType=TINYINT},
+      estate_safe_facility = #{record.estateSafeFacility,jdbcType=TINYINT},
+      afforest_sanitation = #{record.afforestSanitation,jdbcType=TINYINT},
+      afforest_percent = #{record.afforestPercent,jdbcType=DECIMAL},
+      plot_ratio = #{record.plotRatio,jdbcType=DECIMAL},
+      developers = #{record.developers,jdbcType=VARCHAR},
+      property_management = #{record.propertyManagement,jdbcType=VARCHAR},
+      resident_total = #{record.residentTotal,jdbcType=INTEGER},
+      estate_area = #{record.estateArea,jdbcType=INTEGER},
+      aversion_facility = #{record.aversionFacility,jdbcType=TINYINT},
+      environment = #{record.environment,jdbcType=VARCHAR},
+      peripheral_matching = #{record.peripheralMatching,jdbcType=VARCHAR},
+      house_owners = #{record.houseOwners,jdbcType=VARCHAR},
+      mortgage_user_name = #{record.mortgageUserName,jdbcType=VARCHAR},
+      current_mortgage_status = #{record.currentMortgageStatus,jdbcType=TINYINT},
+      mortgage_order_id = #{record.mortgageOrderId,jdbcType=VARCHAR},
+      create_user = #{record.createUser,jdbcType=CHAR},
+      create_time = #{record.createTime,jdbcType=TIMESTAMP},
+      update_user = #{record.updateUser,jdbcType=CHAR},
+      update_time = #{record.updateTime,jdbcType=TIMESTAMP},
+      family_member_remarks = #{record.familyMemberRemarks,jdbcType=LONGVARCHAR},
+      house_use_remarks = #{record.houseUseRemarks,jdbcType=LONGVARCHAR},
+      living_conditions = #{record.livingConditions,jdbcType=LONGVARCHAR},
+      indoor_situation = #{record.indoorSituation,jdbcType=LONGVARCHAR},
+      house_overall_situation = #{record.houseOverallSituation,jdbcType=LONGVARCHAR},
+      biandong_detail = #{record.biandongDetail,jdbcType=LONGVARCHAR},
+      xiongzhai_desc = #{record.xiongzhaiDesc,jdbcType=LONGVARCHAR},
+      river_view_house_detail = #{record.riverViewHouseDetail,jdbcType=LONGVARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update fh_house_info
+    set id = #{record.id,jdbcType=BIGINT},
+      house_code = #{record.houseCode,jdbcType=VARCHAR},
+      house_cert_no = #{record.houseCertNo,jdbcType=VARCHAR},
+      house_province_code = #{record.houseProvinceCode,jdbcType=VARCHAR},
+      house_province = #{record.houseProvince,jdbcType=VARCHAR},
+      house_city_code = #{record.houseCityCode,jdbcType=VARCHAR},
+      house_city = #{record.houseCity,jdbcType=VARCHAR},
+      house_county_code = #{record.houseCountyCode,jdbcType=VARCHAR},
+      house_county = #{record.houseCounty,jdbcType=VARCHAR},
+      house_address = #{record.houseAddress,jdbcType=VARCHAR},
+      house_location = #{record.houseLocation,jdbcType=VARCHAR},
+      family_member = #{record.familyMember,jdbcType=CHAR},
+      house_use = #{record.houseUse,jdbcType=CHAR},
+      guihuayongtu = #{record.guihuayongtu,jdbcType=TINYINT},
+      property_access = #{record.propertyAccess,jdbcType=TINYINT},
+      chanquan = #{record.chanquan,jdbcType=TINYINT},
+      is_manwuweiyi = #{record.isManwuweiyi,jdbcType=TINYINT},
+      is_xuequ = #{record.isXuequ,jdbcType=TINYINT},
+      school_name = #{record.schoolName,jdbcType=VARCHAR},
+      all_floors = #{record.allFloors,jdbcType=INTEGER},
+      in_floors = #{record.inFloors,jdbcType=INTEGER},
+      house_size = #{record.houseSize,jdbcType=REAL},
+      built_in = #{record.builtIn,jdbcType=VARCHAR},
+      house_register_date = #{record.houseRegisterDate,jdbcType=DATE},
+      house_buy_date = #{record.houseBuyDate,jdbcType=DATE},
+      house_structure = #{record.houseStructure,jdbcType=TINYINT},
+      is_new = #{record.isNew,jdbcType=TINYINT},
+      house_buy_money = #{record.houseBuyMoney,jdbcType=DECIMAL},
+      house_type = #{record.houseType,jdbcType=TINYINT},
+      house_property = #{record.houseProperty,jdbcType=TINYINT},
+      huxing = #{record.huxing,jdbcType=TINYINT},
+      fangwuchaoxiang = #{record.fangwuchaoxiang,jdbcType=TINYINT},
+      juzhuzhuangkuang = #{record.juzhuzhuangkuang,jdbcType=TINYINT},
+      house_pattern = #{record.housePattern,jdbcType=TINYINT},
+      fitment_situation = #{record.fitmentSituation,jdbcType=TINYINT},
+      indoor_sunlight = #{record.indoorSunlight,jdbcType=TINYINT},
+      have_lift = #{record.haveLift,jdbcType=TINYINT},
+      jiti_jihu = #{record.jitiJihu,jdbcType=VARCHAR},
+      is_excellent_place = #{record.isExcellentPlace,jdbcType=TINYINT},
+      is_frontage = #{record.isFrontage,jdbcType=TINYINT},
+      is_nearsubway = #{record.isNearsubway,jdbcType=TINYINT},
+      zhongda_biandong = #{record.zhongdaBiandong,jdbcType=TINYINT},
+      is_xiongzhai = #{record.isXiongzhai,jdbcType=TINYINT},
+      is_river_view_house = #{record.isRiverViewHouse,jdbcType=TINYINT},
+      house_district = #{record.houseDistrict,jdbcType=VARCHAR},
+      parking_situation = #{record.parkingSituation,jdbcType=TINYINT},
+      estate_parking_situation = #{record.estateParkingSituation,jdbcType=TINYINT},
+      estate_safe_facility = #{record.estateSafeFacility,jdbcType=TINYINT},
+      afforest_sanitation = #{record.afforestSanitation,jdbcType=TINYINT},
+      afforest_percent = #{record.afforestPercent,jdbcType=DECIMAL},
+      plot_ratio = #{record.plotRatio,jdbcType=DECIMAL},
+      developers = #{record.developers,jdbcType=VARCHAR},
+      property_management = #{record.propertyManagement,jdbcType=VARCHAR},
+      resident_total = #{record.residentTotal,jdbcType=INTEGER},
+      estate_area = #{record.estateArea,jdbcType=INTEGER},
+      aversion_facility = #{record.aversionFacility,jdbcType=TINYINT},
+      environment = #{record.environment,jdbcType=VARCHAR},
+      peripheral_matching = #{record.peripheralMatching,jdbcType=VARCHAR},
+      house_owners = #{record.houseOwners,jdbcType=VARCHAR},
+      mortgage_user_name = #{record.mortgageUserName,jdbcType=VARCHAR},
+      current_mortgage_status = #{record.currentMortgageStatus,jdbcType=TINYINT},
+      mortgage_order_id = #{record.mortgageOrderId,jdbcType=VARCHAR},
+      create_user = #{record.createUser,jdbcType=CHAR},
+      create_time = #{record.createTime,jdbcType=TIMESTAMP},
+      update_user = #{record.updateUser,jdbcType=CHAR},
+      update_time = #{record.updateTime,jdbcType=TIMESTAMP}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.fanghuwang.autocode.dao.model.HouseInfoWithBLOBs" >
+    update fh_house_info
+    <set >
+      <if test="houseCode != null" >
+        house_code = #{houseCode,jdbcType=VARCHAR},
+      </if>
+      <if test="houseCertNo != null" >
+        house_cert_no = #{houseCertNo,jdbcType=VARCHAR},
+      </if>
+      <if test="houseProvinceCode != null" >
+        house_province_code = #{houseProvinceCode,jdbcType=VARCHAR},
+      </if>
+      <if test="houseProvince != null" >
+        house_province = #{houseProvince,jdbcType=VARCHAR},
+      </if>
+      <if test="houseCityCode != null" >
+        house_city_code = #{houseCityCode,jdbcType=VARCHAR},
+      </if>
+      <if test="houseCity != null" >
+        house_city = #{houseCity,jdbcType=VARCHAR},
+      </if>
+      <if test="houseCountyCode != null" >
+        house_county_code = #{houseCountyCode,jdbcType=VARCHAR},
+      </if>
+      <if test="houseCounty != null" >
+        house_county = #{houseCounty,jdbcType=VARCHAR},
+      </if>
+      <if test="houseAddress != null" >
+        house_address = #{houseAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="houseLocation != null" >
+        house_location = #{houseLocation,jdbcType=VARCHAR},
+      </if>
+      <if test="familyMember != null" >
+        family_member = #{familyMember,jdbcType=CHAR},
+      </if>
+      <if test="houseUse != null" >
+        house_use = #{houseUse,jdbcType=CHAR},
+      </if>
+      <if test="guihuayongtu != null" >
+        guihuayongtu = #{guihuayongtu,jdbcType=TINYINT},
+      </if>
+      <if test="propertyAccess != null" >
+        property_access = #{propertyAccess,jdbcType=TINYINT},
+      </if>
+      <if test="chanquan != null" >
+        chanquan = #{chanquan,jdbcType=TINYINT},
+      </if>
+      <if test="isManwuweiyi != null" >
+        is_manwuweiyi = #{isManwuweiyi,jdbcType=TINYINT},
+      </if>
+      <if test="isXuequ != null" >
+        is_xuequ = #{isXuequ,jdbcType=TINYINT},
+      </if>
+      <if test="schoolName != null" >
+        school_name = #{schoolName,jdbcType=VARCHAR},
+      </if>
+      <if test="allFloors != null" >
+        all_floors = #{allFloors,jdbcType=INTEGER},
+      </if>
+      <if test="inFloors != null" >
+        in_floors = #{inFloors,jdbcType=INTEGER},
+      </if>
+      <if test="houseSize != null" >
+        house_size = #{houseSize,jdbcType=REAL},
+      </if>
+      <if test="builtIn != null" >
+        built_in = #{builtIn,jdbcType=VARCHAR},
+      </if>
+      <if test="houseRegisterDate != null" >
+        house_register_date = #{houseRegisterDate,jdbcType=DATE},
+      </if>
+      <if test="houseBuyDate != null" >
+        house_buy_date = #{houseBuyDate,jdbcType=DATE},
+      </if>
+      <if test="houseStructure != null" >
+        house_structure = #{houseStructure,jdbcType=TINYINT},
+      </if>
+      <if test="isNew != null" >
+        is_new = #{isNew,jdbcType=TINYINT},
+      </if>
+      <if test="houseBuyMoney != null" >
+        house_buy_money = #{houseBuyMoney,jdbcType=DECIMAL},
+      </if>
+      <if test="houseType != null" >
+        house_type = #{houseType,jdbcType=TINYINT},
+      </if>
+      <if test="houseProperty != null" >
+        house_property = #{houseProperty,jdbcType=TINYINT},
+      </if>
+      <if test="huxing != null" >
+        huxing = #{huxing,jdbcType=TINYINT},
+      </if>
+      <if test="fangwuchaoxiang != null" >
+        fangwuchaoxiang = #{fangwuchaoxiang,jdbcType=TINYINT},
+      </if>
+      <if test="juzhuzhuangkuang != null" >
+        juzhuzhuangkuang = #{juzhuzhuangkuang,jdbcType=TINYINT},
+      </if>
+      <if test="housePattern != null" >
+        house_pattern = #{housePattern,jdbcType=TINYINT},
+      </if>
+      <if test="fitmentSituation != null" >
+        fitment_situation = #{fitmentSituation,jdbcType=TINYINT},
+      </if>
+      <if test="indoorSunlight != null" >
+        indoor_sunlight = #{indoorSunlight,jdbcType=TINYINT},
+      </if>
+      <if test="haveLift != null" >
+        have_lift = #{haveLift,jdbcType=TINYINT},
+      </if>
+      <if test="jitiJihu != null" >
+        jiti_jihu = #{jitiJihu,jdbcType=VARCHAR},
+      </if>
+      <if test="isExcellentPlace != null" >
+        is_excellent_place = #{isExcellentPlace,jdbcType=TINYINT},
+      </if>
+      <if test="isFrontage != null" >
+        is_frontage = #{isFrontage,jdbcType=TINYINT},
+      </if>
+      <if test="isNearsubway != null" >
+        is_nearsubway = #{isNearsubway,jdbcType=TINYINT},
+      </if>
+      <if test="zhongdaBiandong != null" >
+        zhongda_biandong = #{zhongdaBiandong,jdbcType=TINYINT},
+      </if>
+      <if test="isXiongzhai != null" >
+        is_xiongzhai = #{isXiongzhai,jdbcType=TINYINT},
+      </if>
+      <if test="isRiverViewHouse != null" >
+        is_river_view_house = #{isRiverViewHouse,jdbcType=TINYINT},
+      </if>
+      <if test="houseDistrict != null" >
+        house_district = #{houseDistrict,jdbcType=VARCHAR},
+      </if>
+      <if test="parkingSituation != null" >
+        parking_situation = #{parkingSituation,jdbcType=TINYINT},
+      </if>
+      <if test="estateParkingSituation != null" >
+        estate_parking_situation = #{estateParkingSituation,jdbcType=TINYINT},
+      </if>
+      <if test="estateSafeFacility != null" >
+        estate_safe_facility = #{estateSafeFacility,jdbcType=TINYINT},
+      </if>
+      <if test="afforestSanitation != null" >
+        afforest_sanitation = #{afforestSanitation,jdbcType=TINYINT},
+      </if>
+      <if test="afforestPercent != null" >
+        afforest_percent = #{afforestPercent,jdbcType=DECIMAL},
+      </if>
+      <if test="plotRatio != null" >
+        plot_ratio = #{plotRatio,jdbcType=DECIMAL},
+      </if>
+      <if test="developers != null" >
+        developers = #{developers,jdbcType=VARCHAR},
+      </if>
+      <if test="propertyManagement != null" >
+        property_management = #{propertyManagement,jdbcType=VARCHAR},
+      </if>
+      <if test="residentTotal != null" >
+        resident_total = #{residentTotal,jdbcType=INTEGER},
+      </if>
+      <if test="estateArea != null" >
+        estate_area = #{estateArea,jdbcType=INTEGER},
+      </if>
+      <if test="aversionFacility != null" >
+        aversion_facility = #{aversionFacility,jdbcType=TINYINT},
+      </if>
+      <if test="environment != null" >
+        environment = #{environment,jdbcType=VARCHAR},
+      </if>
+      <if test="peripheralMatching != null" >
+        peripheral_matching = #{peripheralMatching,jdbcType=VARCHAR},
+      </if>
+      <if test="houseOwners != null" >
+        house_owners = #{houseOwners,jdbcType=VARCHAR},
+      </if>
+      <if test="mortgageUserName != null" >
+        mortgage_user_name = #{mortgageUserName,jdbcType=VARCHAR},
+      </if>
+      <if test="currentMortgageStatus != null" >
+        current_mortgage_status = #{currentMortgageStatus,jdbcType=TINYINT},
+      </if>
+      <if test="mortgageOrderId != null" >
+        mortgage_order_id = #{mortgageOrderId,jdbcType=VARCHAR},
+      </if>
+      <if test="createUser != null" >
+        create_user = #{createUser,jdbcType=CHAR},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateUser != null" >
+        update_user = #{updateUser,jdbcType=CHAR},
+      </if>
+      <if test="updateTime != null" >
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="familyMemberRemarks != null" >
+        family_member_remarks = #{familyMemberRemarks,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="houseUseRemarks != null" >
+        house_use_remarks = #{houseUseRemarks,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="livingConditions != null" >
+        living_conditions = #{livingConditions,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="indoorSituation != null" >
+        indoor_situation = #{indoorSituation,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="houseOverallSituation != null" >
+        house_overall_situation = #{houseOverallSituation,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="biandongDetail != null" >
+        biandong_detail = #{biandongDetail,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="xiongzhaiDesc != null" >
+        xiongzhai_desc = #{xiongzhaiDesc,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="riverViewHouseDetail != null" >
+        river_view_house_detail = #{riverViewHouseDetail,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.fanghuwang.autocode.dao.model.HouseInfoWithBLOBs" >
+    update fh_house_info
+    set house_code = #{houseCode,jdbcType=VARCHAR},
+      house_cert_no = #{houseCertNo,jdbcType=VARCHAR},
+      house_province_code = #{houseProvinceCode,jdbcType=VARCHAR},
+      house_province = #{houseProvince,jdbcType=VARCHAR},
+      house_city_code = #{houseCityCode,jdbcType=VARCHAR},
+      house_city = #{houseCity,jdbcType=VARCHAR},
+      house_county_code = #{houseCountyCode,jdbcType=VARCHAR},
+      house_county = #{houseCounty,jdbcType=VARCHAR},
+      house_address = #{houseAddress,jdbcType=VARCHAR},
+      house_location = #{houseLocation,jdbcType=VARCHAR},
+      family_member = #{familyMember,jdbcType=CHAR},
+      house_use = #{houseUse,jdbcType=CHAR},
+      guihuayongtu = #{guihuayongtu,jdbcType=TINYINT},
+      property_access = #{propertyAccess,jdbcType=TINYINT},
+      chanquan = #{chanquan,jdbcType=TINYINT},
+      is_manwuweiyi = #{isManwuweiyi,jdbcType=TINYINT},
+      is_xuequ = #{isXuequ,jdbcType=TINYINT},
+      school_name = #{schoolName,jdbcType=VARCHAR},
+      all_floors = #{allFloors,jdbcType=INTEGER},
+      in_floors = #{inFloors,jdbcType=INTEGER},
+      house_size = #{houseSize,jdbcType=REAL},
+      built_in = #{builtIn,jdbcType=VARCHAR},
+      house_register_date = #{houseRegisterDate,jdbcType=DATE},
+      house_buy_date = #{houseBuyDate,jdbcType=DATE},
+      house_structure = #{houseStructure,jdbcType=TINYINT},
+      is_new = #{isNew,jdbcType=TINYINT},
+      house_buy_money = #{houseBuyMoney,jdbcType=DECIMAL},
+      house_type = #{houseType,jdbcType=TINYINT},
+      house_property = #{houseProperty,jdbcType=TINYINT},
+      huxing = #{huxing,jdbcType=TINYINT},
+      fangwuchaoxiang = #{fangwuchaoxiang,jdbcType=TINYINT},
+      juzhuzhuangkuang = #{juzhuzhuangkuang,jdbcType=TINYINT},
+      house_pattern = #{housePattern,jdbcType=TINYINT},
+      fitment_situation = #{fitmentSituation,jdbcType=TINYINT},
+      indoor_sunlight = #{indoorSunlight,jdbcType=TINYINT},
+      have_lift = #{haveLift,jdbcType=TINYINT},
+      jiti_jihu = #{jitiJihu,jdbcType=VARCHAR},
+      is_excellent_place = #{isExcellentPlace,jdbcType=TINYINT},
+      is_frontage = #{isFrontage,jdbcType=TINYINT},
+      is_nearsubway = #{isNearsubway,jdbcType=TINYINT},
+      zhongda_biandong = #{zhongdaBiandong,jdbcType=TINYINT},
+      is_xiongzhai = #{isXiongzhai,jdbcType=TINYINT},
+      is_river_view_house = #{isRiverViewHouse,jdbcType=TINYINT},
+      house_district = #{houseDistrict,jdbcType=VARCHAR},
+      parking_situation = #{parkingSituation,jdbcType=TINYINT},
+      estate_parking_situation = #{estateParkingSituation,jdbcType=TINYINT},
+      estate_safe_facility = #{estateSafeFacility,jdbcType=TINYINT},
+      afforest_sanitation = #{afforestSanitation,jdbcType=TINYINT},
+      afforest_percent = #{afforestPercent,jdbcType=DECIMAL},
+      plot_ratio = #{plotRatio,jdbcType=DECIMAL},
+      developers = #{developers,jdbcType=VARCHAR},
+      property_management = #{propertyManagement,jdbcType=VARCHAR},
+      resident_total = #{residentTotal,jdbcType=INTEGER},
+      estate_area = #{estateArea,jdbcType=INTEGER},
+      aversion_facility = #{aversionFacility,jdbcType=TINYINT},
+      environment = #{environment,jdbcType=VARCHAR},
+      peripheral_matching = #{peripheralMatching,jdbcType=VARCHAR},
+      house_owners = #{houseOwners,jdbcType=VARCHAR},
+      mortgage_user_name = #{mortgageUserName,jdbcType=VARCHAR},
+      current_mortgage_status = #{currentMortgageStatus,jdbcType=TINYINT},
+      mortgage_order_id = #{mortgageOrderId,jdbcType=VARCHAR},
+      create_user = #{createUser,jdbcType=CHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      update_user = #{updateUser,jdbcType=CHAR},
+      update_time = #{updateTime,jdbcType=TIMESTAMP},
+      family_member_remarks = #{familyMemberRemarks,jdbcType=LONGVARCHAR},
+      house_use_remarks = #{houseUseRemarks,jdbcType=LONGVARCHAR},
+      living_conditions = #{livingConditions,jdbcType=LONGVARCHAR},
+      indoor_situation = #{indoorSituation,jdbcType=LONGVARCHAR},
+      house_overall_situation = #{houseOverallSituation,jdbcType=LONGVARCHAR},
+      biandong_detail = #{biandongDetail,jdbcType=LONGVARCHAR},
+      xiongzhai_desc = #{xiongzhaiDesc,jdbcType=LONGVARCHAR},
+      river_view_house_detail = #{riverViewHouseDetail,jdbcType=LONGVARCHAR}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.fanghuwang.autocode.dao.model.HouseInfo" >
+    update fh_house_info
+    set house_code = #{houseCode,jdbcType=VARCHAR},
+      house_cert_no = #{houseCertNo,jdbcType=VARCHAR},
+      house_province_code = #{houseProvinceCode,jdbcType=VARCHAR},
+      house_province = #{houseProvince,jdbcType=VARCHAR},
+      house_city_code = #{houseCityCode,jdbcType=VARCHAR},
+      house_city = #{houseCity,jdbcType=VARCHAR},
+      house_county_code = #{houseCountyCode,jdbcType=VARCHAR},
+      house_county = #{houseCounty,jdbcType=VARCHAR},
+      house_address = #{houseAddress,jdbcType=VARCHAR},
+      house_location = #{houseLocation,jdbcType=VARCHAR},
+      family_member = #{familyMember,jdbcType=CHAR},
+      house_use = #{houseUse,jdbcType=CHAR},
+      guihuayongtu = #{guihuayongtu,jdbcType=TINYINT},
+      property_access = #{propertyAccess,jdbcType=TINYINT},
+      chanquan = #{chanquan,jdbcType=TINYINT},
+      is_manwuweiyi = #{isManwuweiyi,jdbcType=TINYINT},
+      is_xuequ = #{isXuequ,jdbcType=TINYINT},
+      school_name = #{schoolName,jdbcType=VARCHAR},
+      all_floors = #{allFloors,jdbcType=INTEGER},
+      in_floors = #{inFloors,jdbcType=INTEGER},
+      house_size = #{houseSize,jdbcType=REAL},
+      built_in = #{builtIn,jdbcType=VARCHAR},
+      house_register_date = #{houseRegisterDate,jdbcType=DATE},
+      house_buy_date = #{houseBuyDate,jdbcType=DATE},
+      house_structure = #{houseStructure,jdbcType=TINYINT},
+      is_new = #{isNew,jdbcType=TINYINT},
+      house_buy_money = #{houseBuyMoney,jdbcType=DECIMAL},
+      house_type = #{houseType,jdbcType=TINYINT},
+      house_property = #{houseProperty,jdbcType=TINYINT},
+      huxing = #{huxing,jdbcType=TINYINT},
+      fangwuchaoxiang = #{fangwuchaoxiang,jdbcType=TINYINT},
+      juzhuzhuangkuang = #{juzhuzhuangkuang,jdbcType=TINYINT},
+      house_pattern = #{housePattern,jdbcType=TINYINT},
+      fitment_situation = #{fitmentSituation,jdbcType=TINYINT},
+      indoor_sunlight = #{indoorSunlight,jdbcType=TINYINT},
+      have_lift = #{haveLift,jdbcType=TINYINT},
+      jiti_jihu = #{jitiJihu,jdbcType=VARCHAR},
+      is_excellent_place = #{isExcellentPlace,jdbcType=TINYINT},
+      is_frontage = #{isFrontage,jdbcType=TINYINT},
+      is_nearsubway = #{isNearsubway,jdbcType=TINYINT},
+      zhongda_biandong = #{zhongdaBiandong,jdbcType=TINYINT},
+      is_xiongzhai = #{isXiongzhai,jdbcType=TINYINT},
+      is_river_view_house = #{isRiverViewHouse,jdbcType=TINYINT},
+      house_district = #{houseDistrict,jdbcType=VARCHAR},
+      parking_situation = #{parkingSituation,jdbcType=TINYINT},
+      estate_parking_situation = #{estateParkingSituation,jdbcType=TINYINT},
+      estate_safe_facility = #{estateSafeFacility,jdbcType=TINYINT},
+      afforest_sanitation = #{afforestSanitation,jdbcType=TINYINT},
+      afforest_percent = #{afforestPercent,jdbcType=DECIMAL},
+      plot_ratio = #{plotRatio,jdbcType=DECIMAL},
+      developers = #{developers,jdbcType=VARCHAR},
+      property_management = #{propertyManagement,jdbcType=VARCHAR},
+      resident_total = #{residentTotal,jdbcType=INTEGER},
+      estate_area = #{estateArea,jdbcType=INTEGER},
+      aversion_facility = #{aversionFacility,jdbcType=TINYINT},
+      environment = #{environment,jdbcType=VARCHAR},
+      peripheral_matching = #{peripheralMatching,jdbcType=VARCHAR},
+      house_owners = #{houseOwners,jdbcType=VARCHAR},
+      mortgage_user_name = #{mortgageUserName,jdbcType=VARCHAR},
+      current_mortgage_status = #{currentMortgageStatus,jdbcType=TINYINT},
+      mortgage_order_id = #{mortgageOrderId,jdbcType=VARCHAR},
+      create_user = #{createUser,jdbcType=CHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      update_user = #{updateUser,jdbcType=CHAR},
+      update_time = #{updateTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>
